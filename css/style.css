@@ -1,0 +1,20 @@
+body {
+	-webkit-user-select: none; /* Untuk peramban berbasis WebKit (misalnya Chrome dan Safari) */
+	-moz-user-select: none; /* Untuk peramban berbasis Gecko (misalnya Firefox) */
+	-ms-user-select: none; /* Untuk peramban berbasis Microsoft (misalnya Edge) */
+	user-select: none; /* Standar CSS */
+}
+
+.jumbotron{
+	background-color: #D6E7FE;
+	padding: 3rem 1rem 1rem 1rem;
+}
+
+section a{
+	color: inherit;
+	text-decoration: none;
+}
+section a:hover{
+	text-decoration: 1px solid red;
+	
+}

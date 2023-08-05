@@ -6,8 +6,9 @@ body {
 }
 
 .jumbotron{
-	background-color: #D6E7FE;
-	padding: 3rem 1rem 1rem 1rem;
+	margin-top: 30px;
+	background-color: #A084E8;
+	padding: 3rem 1rem 1rem 0px;
 }
 
 section a{
@@ -16,4 +17,15 @@ section a{
 }
 section a:hover{
 	font-weight: bold;
+}
+hr{
+/* 	width: 200px; */
+/* 	width: calc(100% * 8 / 12); */
+}
+
+section{
+	min-height: 100px;
+}
+section#projek{
+	background-color: #d5ffe4;
 }

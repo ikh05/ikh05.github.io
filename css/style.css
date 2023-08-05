@@ -15,6 +15,5 @@ section a{
 	text-decoration: none;
 }
 section a:hover{
-	text-decoration: 1px solid red;
-	
+	font-weight: bold;
 }

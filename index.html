@@ -1,15 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio GitHub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="bg-light">
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">My Portfolio</a>
+    </div>
+  </nav>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  </body>
+  <!-- Profil -->
+  <section class="container my-4 text-center" id="profile">
+    <img id="avatar" class="rounded-circle mb-3" width="120" alt="Avatar">
+    <h2 id="name"></h2>
+    <p id="bio" class="text-muted"></p>
+    <a id="githubLink" class="btn btn-dark" target="_blank">Lihat GitHub</a>
+  </section>
+
+  <!-- Repo -->
+  <section class="container my-5">
+    <h3 class="mb-3">Repository Publik</h3>
+    <div id="repoList" class="row g-3"></div>
+  </section>
+
+  <!-- Website -->
+  <section class="container my-5">
+    <h3 class="mb-3">Website Saya</h3>
+    <div id="websiteList" class="row g-3">
+      <!-- contoh manual -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">Website 1</h5>
+            <p class="card-text">Deskripsi singkat website pertama.</p>
+            <a href="https://contoh1.github.io" class="btn btn-primary" target="_blank">Kunjungi</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">Website 2</h5>
+            <p class="card-text">Deskripsi singkat website kedua.</p>
+            <a href="https://contoh2.vercel.app" class="btn btn-primary" target="_blank">Kunjungi</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-dark text-white text-center py-3">
+    © 2025 Dibuat dengan ❤️ dan GitHub Pages
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
 </html>

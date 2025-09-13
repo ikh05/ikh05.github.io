@@ -1,5 +1,5 @@
 // Ganti dengan username GitHub-mu
-const username = "YOUR_GITHUB_USERNAME";
+const username = "ikh05";
 
 // Ambil profil
 fetch(`https://api.github.com/users/${username}`)

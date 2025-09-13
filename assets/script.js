@@ -3,7 +3,7 @@ const username = "ikh05";
 
 
 // Ambil profil
-fetch(`https://api.github.com/users/${username}`)
+fetch(`https://api.github.com/users/ikh05`)
   .then(res => res.json())
   .then(data => {
     document.getElementById("avatar").src = data.avatar_url;
@@ -13,7 +13,7 @@ fetch(`https://api.github.com/users/${username}`)
   });
 
 // Ambil repositori publik
-fetch(`https://api.github.com/users/${username}/repos?sort=updated`)
+fetch(`https://api.github.com/users/ikh05/repos?sort=updated`)
   .then(res => res.json())
   .then(repos => {
     const repoList = document.getElementById("repoList");

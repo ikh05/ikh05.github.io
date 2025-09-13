@@ -1,6 +1,7 @@
 // Ganti dengan username GitHub-mu
 const username = "ikh05";
 
+
 // Ambil profil
 fetch(`https://api.github.com/users/${username}`)
   .then(res => res.json())

@@ -1,5 +1,5 @@
 async function fetchGitHub(type) {
-  const res = await fetch("https://YOUR_NETLIFY_URL/.netlify/functions/github", {
+  const res = await fetch("https://github-proxy-netlify.netlify.app/.netlify/functions/github", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ type }) // type = "user" atau "repos"
@@ -19,7 +19,7 @@ fetchGitHub("repos"); // ambil repos
 
 
 // // Ambil profil
-// fetch(`https://github-proxy-netlify.netlify.app/.netlify/functions/github-data`)
+// fetch(`https://github-proxy-netlify.netlify.app/.netlify/functions/github`)
 //   .then(res => res.json())
 //   .then(data => {
 //     console.log(data);

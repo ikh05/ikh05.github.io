@@ -25,7 +25,8 @@ async function fetchGitHub(type) {
     document.getElementById("bio").textContent = "Gagal ambil data.";
     return;
   }
-
+  console.log(user);
+  
   document.getElementById("avatar").src = user.avatar_url;
   document.getElementById("name").textContent = user.name || user.login;
   document.getElementById("bio").textContent = user.bio || "Tidak ada bio.";

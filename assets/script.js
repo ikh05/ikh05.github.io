@@ -30,4 +30,6 @@ async function fetchGitHub(type) {
   document.getElementById("name").textContent = user.name || user.login;
   document.getElementById("bio").textContent = user.bio || "Tidak ada bio.";
   document.getElementById("githubLink").href = user.html_url;
+  document.getElementById("footerGithubLink").href = user.html_url;
+  document.getElementById("footerGithubLink").innerHTML = `<i class="fa-brands fa-github"></i> ${user.name || user.login}`;
 })();

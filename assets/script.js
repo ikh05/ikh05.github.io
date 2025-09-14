@@ -1,5 +1,5 @@
 async function fetchGitHub(type, func = null) {
-  const res = await fetch("https://github-proxy-netlify.netlify.app/.netlify/functions/github", {
+  const res = await fetch("https://github-token-ikh05.netlify.app/.netlify/functions/github", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ type }) // type = "user" atau "repos"

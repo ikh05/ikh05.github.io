@@ -16,6 +16,4 @@ fetchGitHub("user", function(repos){
   document.getElementById("name").textContent = repos.name || repos.login;
   document.getElementById("bio").textContent = repos.bio || "Tidak ada bio.";
   document.getElementById("githubLink").href = repos.html_url;
-  document.getElementById("footerGithubLink").href = repos.html_url;
-  document.getElementById("footerGithubLink").innerHTML = '<i class="fa-brands fa-github"></i>' . repo.name;
 }); 

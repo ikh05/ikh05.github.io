@@ -39,7 +39,7 @@ async function fetchGitHub(type, body = {}) {
 
 (async ()=> {
   const file = await fetchGitHub("file", { 
-    path: "readme.md", 
+    path: "README.md", 
     repo: "ikh05" 
   });
   if (file.error) {

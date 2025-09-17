@@ -43,7 +43,6 @@ function parseSocialBadges(markdown) {
 
 const end_loading = {
   user: false,
-  social_media: false,
 }
 function show_hiddenElement(el_show, el_hidden, show = true, func = null) {
   if(show) {
@@ -105,11 +104,5 @@ function checkAllTrue(obj) {
        <a  data-aos="zoom-in-up" href="${sm.link}" class="btn col-auto" target="_blank" style="background-color: ${sm.color}; color: white;"> <i class="fa-brands fa-${sm.sosial_media.toLowerCase()}"></i> ${sm.sosial_media}</a>
      `;
   });
-  end_loading.social_media = true;
-  if(checkAllTrue(end_loading)) {
-    show_hiddenElement("trueProfil", "profilPlaceholder", true, ()=>{
-      document.getElementById("profilPlaceholder").remove();
-    });
-  }
 })();
 

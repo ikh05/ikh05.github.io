@@ -18,6 +18,25 @@ async function fetchGitHub(type, body = {}) {
   }
 }
 
+
+function parseSocialBadges(markdown) {
+  // Regex: [![Nama](badge_url)](link_url)
+  const regex = /\[!\[(.*?)\]\(.*?\)\]\((.*?)\)/g;
+
+  const result = [];
+  let match;
+
+  while ((match = regex.exec(markdown)) !== null) {
+    result.push({
+      sosial_media: match[1], // Nama badge → "Instagram", "Facebook", dst
+      link: match[2]          // URL tujuan
+    });
+  }
+
+  return result;
+}
+
+
 // Contoh penggunaan
 (async () => {
   const user = await fetchGitHub("user");
@@ -43,8 +62,12 @@ async function fetchGitHub(type, body = {}) {
     repo: "ikh05" 
   });
   if (file.error) {
-    document.getElementById("Readme.md").textContent = "Gagal ambil data.";
+    console.error("Gagal ambil file:", file.error);
     return;
   }
   console.log(file);
+  // ambil isi file bagian sosial media
+  const readmeContent = file.content;
+  const social_media = readmeContent.split("Connect with me")[1].split("##")[0].trim();
+  console.log(parseSocialBadges(social_media));
 })();

@@ -4,7 +4,3 @@ body {
 .card {
   border-radius: 12px;
 }
-
-#socialMedia a{
-  transition: all .5s ease-in-out;
-}

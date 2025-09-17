@@ -44,13 +44,14 @@ function parseSocialBadges(markdown) {
 const end_loading = {
   social_media: false,
   user: false,
+  avatar: false,
 }
 function show_hiddenElement(el_show, el_hidden, show = true, func = null) {
   if(show) {
     document.getElementById(el_show).classList.remove("d-none");
     document.getElementById(el_hidden).classList.add("d-none");
+    if(typeof(func) === "function") func();
   }
-  if(typeof(func) === "function") func();
 }
 // fungsi cek apakah semua data dalam objek sudah true
 function checkAllTrue(obj) {

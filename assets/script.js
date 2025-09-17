@@ -75,7 +75,7 @@ function parseSocialBadges(markdown) {
   const list_sosial_media = parseSocialBadges(social_media);
   list_sosial_media.forEach( sm => {
     document.getElementById("socialMedia").innerHTML += `
-       <a href="${sm.link}" class="btn" target="_blank" style="background-color: ${sm.color}; color: white;"> <i class="fa-brands fa-${sm.sosial_media.toLowerCase()}"></i> ${sm.sosial_media}</a>
+       <a href="${sm.link}" class="btn col" target="_blank" style="background-color: ${sm.color}; color: white;"> <i class="fa-brands fa-${sm.sosial_media.toLowerCase()}"></i> ${sm.sosial_media}</a>
      `;
   });
 })();

@@ -18,7 +18,7 @@ async function fetchGitHub(type, body = {}) {
   }
 }
 
-function parseSocialBadgesWithColor(markdown) {
+function parseSocialBadges(markdown) {
   const regex = /\[!\[(.*?)\]\((.*?)\)\]\((.*?)\)/g;
   const result = [];
   let match;

@@ -43,11 +43,7 @@ function parseSocialBadges(markdown) {
 
 document.getElementById("avatar").onload = function() {
   end_loading.avatar = true 
-  if(checkAllTrue(end_loading)) {
-    show_hiddenElement("trueProfil", "profilPlaceholder", true, ()=>{
-      document.getElementById("profilPlaceholder").remove();
-    });
-  }
+  showProfil();
 }
 
 const end_loading = {
@@ -55,11 +51,19 @@ const end_loading = {
   user: false,
   avatar: false,
 }
-function show_hiddenElement(el_show, el_hidden, show = true, func = null) {
+function showHiddenElement(el_show, el_hidden, show = true, func = null) {
   if(show) {
     document.getElementById(el_show).classList.remove("d-none");
     document.getElementById(el_hidden).classList.add("d-none");
     if(typeof(func) === "function") func();
+  }
+}
+async function showProfil(){
+  await AOS.init();
+  if(checkAllTrue(end_loading)) {
+    showHiddenElement("trueProfil", "profilPlaceholder", true, ()=>{
+      document.getElementById("profilPlaceholder").remove();
+    });
   }
 }
 // fungsi cek apakah semua data dalam objek sudah true
@@ -85,11 +89,7 @@ async function updateUser ()  {
   document.getElementById("footerGithubLink").innerHTML = `<i class="fa-brands fa-github"></i> ${user.name || user.login}`;
   
   end_loading.user = true;
-  if(checkAllTrue(end_loading)) {
-    show_hiddenElement("trueProfil", "profilPlaceholder", true, ()=>{
-      document.getElementById("profilPlaceholder").remove();
-    });
-  }
+  showProfil();
 };
 
 
@@ -117,11 +117,7 @@ async function updateSocialMedia () {
 
   
   end_loading.social_media = true;
-  if(checkAllTrue(end_loading)) {
-    show_hiddenElement("trueProfil", "profilPlaceholder", true, ()=>{
-      document.getElementById("profilPlaceholder").remove();
-    });
-  }
+  showProfil();
 };
 
 await updateUser();

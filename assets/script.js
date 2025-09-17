@@ -18,19 +18,21 @@ async function fetchGitHub(type, body = {}) {
   }
 }
 
-
-function parseSocialBadges(markdown) {
-  // Regex: [![Nama](badge_url)](link_url)
-  const regex = /\[!\[(.*?)\]\(.*?\)\]\((.*?)\)/g;
-
+function parseSocialBadgesWithColor(markdown) {
+  const regex = /\[!\[(.*?)\]\((.*?)\)\]\((.*?)\)/g;
   const result = [];
   let match;
 
   while ((match = regex.exec(markdown)) !== null) {
-    result.push({
-      sosial_media: match[1], // Nama badge → "Instagram", "Facebook", dst
-      link: match[2]          // URL tujuan
-    });
+    const sosial_media = match[1];
+    const badgeUrl = match[2];
+    const link = match[3];
+
+    // Ambil warna dari badge URL (setelah '-%23...')
+    let colorMatch = badgeUrl.match(/-.*?%23([0-9A-Fa-f]{6})/);
+    let color = colorMatch ? `#${colorMatch[1]}` : null;
+
+    result.push({ sosial_media, link, color });
   }
 
   return result;
@@ -50,7 +52,7 @@ function parseSocialBadges(markdown) {
   document.getElementById("name").textContent = user.name || user.login;
   document.getElementById("bio").textContent = user.bio || "Tidak ada bio.";
   document.getElementById("githubLink").href = user.html_url;
-  document.getElementById("githubLink").innerHTML = `<i class="fa-brands fa-github"></i> ${user.login}`;
+  document.getElementById("githubLink").innerHTML = `<i class="fa-brands fa-github"></i> github`;
   document.getElementById("footerGithubLink").href = user.html_url;
   document.getElementById("footerGithubLink").innerHTML = `<i class="fa-brands fa-github"></i> ${user.name || user.login}`;
 })();

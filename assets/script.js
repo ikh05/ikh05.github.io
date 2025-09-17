@@ -72,8 +72,8 @@ function parseSocialBadges(markdown) {
   const button = `<a id="githubLink" class="btn btn-dark" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>`;
   const readmeContent = file.content;
   const social_media = readmeContent.split("Connect with me")[1].split("##")[0].trim();
-  console.log(parseSocialBadges(social_media));
-  sosial_media.forEach( sm => {
+  const list_sosial_media = parseSocialBadges(social_media);
+  list_sosial_media.forEach( sm => {
     document.getElementById("socialMedia").innerHTML += `
       <a href="${sm.link}" class="btn" target="_blank" style="background-color: ${sm.color}; color: white;"> <i class="fa-brands fa-${sm.sosial_media.toLowerCase()}"></i> ${sm.sosial_media}</a>`;
   });

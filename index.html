@@ -18,12 +18,18 @@
   </nav>
 
   <!-- Profil -->
-  <section class="container my-4 text-center" id="profile">
-    <img id="avatar" class="rounded-circle mb-3 img-thumbnail shadow" width="120" alt="Avatar">
+  <section class="container my-4 text-center" id="profile" aria-hidden="true">
+    <img id="avatar" class="rounded-circle mb-3 img-thumbnail shadow " width="120" height="120" alt="Avatar" >
     <h2 id="name"></h2>
     <p id="bio" class="text-muted"></p>
     <div id="socialMedia" class="row gap-1 justify-content-center">
       <a id="githubLink" class="btn btn-dark col-auto" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+    </div>
+
+    <div id="profilPlaceholder">
+      <h2 class="placeholder-glow">
+        <span class="placeholder col-6"></span>
+      </h2>
     </div>
   </section>
 

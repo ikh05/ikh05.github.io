@@ -52,7 +52,7 @@ function parseSocialBadgesWithColor(markdown) {
   document.getElementById("name").textContent = user.name || user.login;
   document.getElementById("bio").textContent = user.bio || "Tidak ada bio.";
   document.getElementById("githubLink").href = user.html_url;
-  document.getElementById("githubLink").innerHTML = `<i class="fa-brands fa-github"></i> github`;
+  document.getElementById("githubLink").innerHTML = `<i class="fa-brands fa-github"></i> Github`;
   document.getElementById("footerGithubLink").href = user.html_url;
   document.getElementById("footerGithubLink").innerHTML = `<i class="fa-brands fa-github"></i> ${user.name || user.login}`;
 })();
@@ -69,7 +69,12 @@ function parseSocialBadgesWithColor(markdown) {
   }
   console.log(file);
   // ambil isi file bagian sosial media
+  const button = `<a id="githubLink" class="btn btn-dark" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>`;
   const readmeContent = file.content;
   const social_media = readmeContent.split("Connect with me")[1].split("##")[0].trim();
   console.log(parseSocialBadges(social_media));
+  sosial_media.forEach( sm => {
+    document.getElementById("socialMedia").innerHTML += `
+      <a href="${sm.link}" class="btn" target="_blank" style="background-color: ${sm.color}; color: white;"> <i class="fa-brands fa-${sm.sosial_media.toLowerCase()}"></i> ${sm.sosial_media}</a>`;
+  });
 })();

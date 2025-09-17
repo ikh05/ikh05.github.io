@@ -120,5 +120,5 @@ async function updateSocialMedia () {
   showProfil();
 };
 
-await updateUser();
-await updateSocialMedia();
+updateUser();
+updateSocialMedia();

@@ -39,6 +39,22 @@ function parseSocialBadges(markdown) {
 }
 
 
+const end_loading = {
+  user: false,
+  social_media: false,
+}
+function show_hiddenElement(el_show, el_hidden, show = true) {
+  if(show) {
+    document.getElementById(el_show).classList.remove("d-none");
+    document.getElementById(el_hidden).classList.add("d-none");
+  }
+}
+// fungsi cek apakah semua data dalam objek sudah true
+function checkAllTrue(obj) {
+  return Object.values(obj).every(value => value === true);
+} 
+
+
 // Contoh penggunaan
 (async () => {
   const user = await fetchGitHub("user");
@@ -55,6 +71,12 @@ function parseSocialBadges(markdown) {
   document.getElementById("githubLink").innerHTML = `<i class="fa-brands fa-github"></i> Github`;
   document.getElementById("footerGithubLink").href = user.html_url;
   document.getElementById("footerGithubLink").innerHTML = `<i class="fa-brands fa-github"></i> ${user.name || user.login}`;
+
+  end_loading.user = true;
+  if(checkAllTrue(end_loading)) {
+    show_hiddenElement("trueProfil", "profilPlaceholder", true);
+    document.getElementById("profile").setAttribute("aria-hidden", "false");
+  }
 })();
 
 
@@ -78,4 +100,10 @@ function parseSocialBadges(markdown) {
        <a href="${sm.link}" class="btn col-auto" target="_blank" style="background-color: ${sm.color}; color: white;"> <i class="fa-brands fa-${sm.sosial_media.toLowerCase()}"></i> ${sm.sosial_media}</a>
      `;
   });
+  end_loading.social_media = true;
+  if(checkAllTrue(end_loading)) {
+    show_hiddenElement("trueProfil", "profilPlaceholder", true);
+    document.getElementById("profile").setAttribute("aria-hidden", "false");
+  }
 })();
+

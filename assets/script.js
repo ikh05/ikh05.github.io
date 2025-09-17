@@ -1,3 +1,5 @@
+AOS.init();
+
 async function fetchGitHub(type, body = {}) {
   try {
     const res = await fetch("https://github-token-ikh05.netlify.app/.netlify/functions/github", {
@@ -99,7 +101,7 @@ function checkAllTrue(obj) {
   const list_sosial_media = parseSocialBadges(social_media);
   list_sosial_media.forEach( sm => {
     document.getElementById("socialMedia").innerHTML += `
-       <a href="${sm.link}" class="btn col-auto" target="_blank" style="background-color: ${sm.color}; color: white;"> <i class="fa-brands fa-${sm.sosial_media.toLowerCase()}"></i> ${sm.sosial_media}</a>
+       <a  data-aos="zoom-in-up" href="${sm.link}" class="btn col-auto" target="_blank" style="background-color: ${sm.color}; color: white;"> <i class="fa-brands fa-${sm.sosial_media.toLowerCase()}"></i> ${sm.sosial_media}</a>
      `;
   });
   end_loading.social_media = true;

@@ -68,8 +68,7 @@ function checkAllTrue(obj) {
 } 
 
 
-// Contoh penggunaan
-(async () => {
+async function updateUser ()  {
   const user = await fetchGitHub("user");
   if (user.error) {
     document.getElementById("bio").textContent = "Gagal ambil data.";
@@ -92,10 +91,10 @@ function checkAllTrue(obj) {
       document.getElementById("profilPlaceholder").remove();
     });
   }
-})();
+};
 
 
-(async ()=> {
+async function updateSocialMedia () {
   const file = await fetchGitHub("file", { 
     path: "README.md", 
     repo: "ikh05" 
@@ -123,5 +122,7 @@ function checkAllTrue(obj) {
       document.getElementById("profilPlaceholder").remove();
     });
   }
-})();
+};
 
+updateUser();
+updateSocialMedia();

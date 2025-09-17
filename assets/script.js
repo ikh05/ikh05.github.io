@@ -70,6 +70,7 @@ function checkAllTrue(obj) {
   document.getElementById("avatar").src = user.avatar_url;
   document.getElementById("name").textContent = user.name || user.login;
   document.getElementById("bio").textContent = user.bio || "Tidak ada bio.";
+  document.getElementById("socialMedia").innerHTML = `<a  data-aos="zoom-in-up" id="githubLink" class="btn btn-dark col-auto" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>`;
   document.getElementById("githubLink").href = user.html_url;
   document.getElementById("githubLink").innerHTML = `<i class="fa-brands fa-github"></i> Github`;
   document.getElementById("footerGithubLink").href = user.html_url;

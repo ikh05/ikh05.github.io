@@ -41,6 +41,15 @@ function parseSocialBadges(markdown) {
 }
 
 
+document.getElementById("avatar").onload = function() {
+  end_loading.avatar = true 
+  if(checkAllTrue(end_loading)) {
+    show_hiddenElement("trueProfil", "profilPlaceholder", true, ()=>{
+      document.getElementById("profilPlaceholder").remove();
+    });
+  }
+}
+
 const end_loading = {
   social_media: false,
   user: false,

@@ -43,11 +43,12 @@ const end_loading = {
   user: false,
   social_media: false,
 }
-function show_hiddenElement(el_show, el_hidden, show = true) {
+function show_hiddenElement(el_show, el_hidden, show = true, func = null) {
   if(show) {
     document.getElementById(el_show).classList.remove("d-none");
     document.getElementById(el_hidden).classList.add("d-none");
   }
+  if(typeof(func) === "function") func();
 }
 // fungsi cek apakah semua data dalam objek sudah true
 function checkAllTrue(obj) {
@@ -74,8 +75,9 @@ function checkAllTrue(obj) {
 
   end_loading.user = true;
   if(checkAllTrue(end_loading)) {
-    show_hiddenElement("trueProfil", "profilPlaceholder", true);
-    document.getElementById("profile").setAttribute("aria-hidden", "false");
+    show_hiddenElement("trueProfil", "profilPlaceholder", true, ()=>{
+      document.getElementById("profilPlaceholder").remove();
+    });
   }
 })();
 
@@ -102,8 +104,9 @@ function checkAllTrue(obj) {
   });
   end_loading.social_media = true;
   if(checkAllTrue(end_loading)) {
-    show_hiddenElement("trueProfil", "profilPlaceholder", true);
-    document.getElementById("profile").setAttribute("aria-hidden", "false");
+    show_hiddenElement("trueProfil", "profilPlaceholder", true, ()=>{
+      document.getElementById("profilPlaceholder").remove();
+    });
   }
 })();
 

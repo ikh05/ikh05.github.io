@@ -100,7 +100,8 @@ async function updateSocialMedia () {
     console.error("Gagal ambil file:", file.error);
     return;
   }
-  console.log(file);
+
+
   // ambil isi file bagian sosial media
   const button = `<a id="githubLink" class="btn btn-dark" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>`;
   const readmeContent = file.content;
@@ -109,7 +110,7 @@ async function updateSocialMedia () {
   document.getElementById("socialMedia").innerHTML += `<a href="https://github.com/ikh05" data-aos="zoom-in" id="githubLink" class="btn btn-dark col-auto" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>`;
   list_sosial_media.forEach( sm => {
     document.getElementById("socialMedia").innerHTML += `
-    <a  data-aos="zoom-in" href="${sm.link}" class="btn col-auto" target="_blank" style="background-color: ${sm.color}; color: white;"> <i class="fa-brands fa-${sm.sosial_media.toLowerCase()}"></i> ${sm.sosial_media}</a>
+    <a  data-aos="zoom-in" href="${sm.link}" class="btn col-auto shadow" target="_blank" style="background-color: ${sm.color}; color: white;"> <i class="fa-brands fa-${sm.sosial_media.toLowerCase()}"></i> ${sm.sosial_media}</a>
     `;
   });
 

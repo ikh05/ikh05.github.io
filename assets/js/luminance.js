@@ -45,7 +45,7 @@ export function getContrastColor(input) {
   
   console.log(luminance, input);
   
-  return luminance > 186 ? "black" : "light"; 
+  return luminance > 186 ? "light" : "black"; 
 }
 // contoh penggunaan:
 // console.log(getContrastColor("#ffffff")); // Output: "black"

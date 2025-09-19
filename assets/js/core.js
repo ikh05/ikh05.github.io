@@ -1,5 +1,4 @@
-import {getContrastColor} from './luminance.js';
-import {updateUser, updateSocialMedia} from './gihub.js';
+import {updateUser, updateSocialMedia} from './github.js';
 import {} from './functions.js';
 
 

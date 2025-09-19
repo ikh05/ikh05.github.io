@@ -84,7 +84,6 @@ export async function updateSocialMedia() {
   // GitHub default button
   document.getElementById("socialMedia").innerHTML += `
     <a href="https://github.com/ikh05"
-       data-aos="zoom-in"
        id="githubLink"
        class="btn btn-dark col-auto"
        target="_blank"
@@ -100,8 +99,7 @@ export async function updateSocialMedia() {
     const textColor = getContrastColor(sm.color) === "black" ? "black" : "white";
 
     document.getElementById("socialMedia").innerHTML += `
-      <a data-aos="zoom-in"
-         href="${sm.link}"
+      <a href="${sm.link}"
          class="btn col-auto shadow"
          target="_blank"
          rel="noopener noreferrer"

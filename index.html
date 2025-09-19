@@ -3,84 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio GitHub</title>
+  <title>Portfolio GitHub - Muhammad Ikhsan</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body class="bg-light">
+  <!-- Skip link untuk pengguna keyboard -->
+  <a href="#mainContent" class="visually-hidden-focusable">Lewati ke konten utama</a>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation" aria-label="Navigasi utama">
     <div class="container">
-      <a class="navbar-brand" href="#">My Portfolio</a>
+      <a class="navbar-brand" href="#">Ikh's Portfolio</a>
     </div>
   </nav>
 
   <!-- Profil -->
-  <section class="container my-4 text-center" id="profile" >
-    <div id="trueProfil" class="d-none">
-      <img id="avatar" class="rounded-circle mb-3 img-thumbnail shadow " alt="Avatar" width="120">
-      <h2 id="name"></h2>
-      <p id="bio" class="text-muted"></p>
-      <div id="socialMedia" class="row gap-1 justify-content-center">
-      </div>
-    </div>
-    
-    <div id="profilPlaceholder" aria-hidden="true">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" class="rounded-circle mb-3 img-thumbnail shadow " alt="Avatar placeholder" width="120">
-      <h2 class="placeholder-glow"><span class="placeholder w-25"></span></h2>
-      <p class="text-muted placeholder-glow"> <span class="placeholder w-50"></span></p>
-      <a class="btn btn-dark col-auto disabled text-dark" aria-disabled="true"><i class="fa-brands fa-github"></i> GitHub</a>
-    </div>
-  </section>
+  <main id="mainContent">
+    <section class="container my-4 text-center" id="profile" aria-labelledby="profileHeading">
+      <h1 id="profileHeading" class="visually-hidden">Profil</h1>
 
-  <!-- Website -->
-  <section class="container my-5">
-    <h4 class="mb-3 text-center">Website yang Pernah Dibuat</h4>
-    <div id="websiteList" class="row g-3 justify-content-center">
-      <!-- contoh manual -->
-      <!-- <div class="col-md-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title mb-0">Borneo Eksplorer</h5>
-            <a class="small text-secondary link-underline-opacity-0" href="https://borneo-explorer.free.nf/" target="_blank"> borneo-explorer.free.nf</a>
-            <hr class="mt-0 mb-1">
-            <p class="card-text">Website ini merupakahan projek dari salah satu mata kuliah di PPG yang dibuat oleh saya dan 7 orang lainnya.</p>
-            <a href="https://borneo-explorer.free.nf/" class="btn btn-primary" target="_blank">Kunjungi</a>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- perbandingan harga -->
-      <div class="col-md-4">
-        <div class="card shadow h-100">
-          <div class="card-body">
-            <h5 class="card-title mb-0">Kalkulator Perbandingan Harga</h5>
-            <a class="small text-secondary link-underline-opacity-0" href="https://calcprice-ikhtoolkit.rf.gd" target="_blank">calcprice-ikhtoolkit.rf.gd</a>
-            <hr class="mt-0 mb-1">
-            <p class="card-text">Memudahkan dalam membandingkan 2 harga barang terhadap berat/isinya</p>
-            <a href="https://calcprice-ikhtoolkit.rf.gd" class="btn btn-primary position-relative end-0" target="_blank">Kunjungi</a>
-          </div>
-        </div>
+      <div id="trueProfil" class="d-none" aria-hidden="true">
+        <img id="avatar" class="rounded-circle mb-3 img-thumbnail shadow"
+             alt="Foto profil Muhammad Ikhsan" width="120">
+        <h2 id="name">Muhammad Ikhsan</h2>
+        <p id="bio" class="text-muted">-</p>
+        <div id="socialMedia" class="row gap-1 justify-content-center" role="list"></div>
       </div>
       
-      <!-- <div class="col-md-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h5 class="card-title">Website 2</h5>
-            <p class="card-text">Deskripsi singkat website kedua.</p>
-            <a href="https://contoh2.vercel.app" class="btn btn-primary" target="_blank">Kunjungi</a>
+      <div id="profilPlaceholder" aria-busy="true" aria-live="polite">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
+             class="rounded-circle mb-3 img-thumbnail shadow"
+             alt="Avatar placeholder" width="120">
+        <h2 class="placeholder-glow"><span class="placeholder w-25"></span></h2>
+        <p class="text-muted placeholder-glow"><span class="placeholder w-50"></span></p>
+        <a class="btn btn-dark col-auto disabled text-dark" aria-disabled="true">
+          <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+        </a>
+      </div>
+    </section>
+
+    <!-- Website -->
+    <section class="container my-5" aria-labelledby="projectHeading">
+      <h2 id="projectHeading" class="mb-3 text-center">Website yang Pernah Dibuat</h2>
+      <div id="websiteList" class="row g-3 justify-content-center">
+        <!-- perbandingan harga -->
+        <div class="col-md-4">
+          <div class="card shadow h-100" role="article">
+            <div class="card-body position-relative">
+              <h3 class="card-title mb-0">Kalkulator Perbandingan Harga</h3>
+              <a class="small text-secondary link-underline-opacity-0"
+                 href="https://calcprice-ikhtoolkit.rf.gd" target="_blank" rel="noopener noreferrer"
+                 aria-label="Kunjungi website Kalkulator Perbandingan Harga di calcprice-ikhtoolkit.rf.gd">
+                 calcprice-ikhtoolkit.rf.gd
+              </a>
+              <hr class="mt-0 mb-1">
+              <p class="card-text">Memudahkan dalam membandingkan 2 harga barang terhadap berat atau isinya.</p>
+              <a href="https://calcprice-ikhtoolkit.rf.gd"
+                 class="btn btn-primary position-relative end-0"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="Kunjungi website Kalkulator Perbandingan Harga">Kunjungi</a>
+            </div>
           </div>
         </div>
-      </div> -->
-    </div>
-  </section>
+      </div>
+    </section>
+  </main>
 
-  <footer class="bg-dark text-white text-center py-3">
-    © 2025 Dibuat oleh <a id="footerGithubLink" target="_blank" class="text-warning link-underline-opacity-0 link-underline">Muhammad Ikhsan</a> dengan GitHub Pages (v0.0.4)
+  <footer class="bg-dark text-white text-center py-3" role="contentinfo">
+    © 2025 Dibuat oleh 
+    <a id="footerGithubLink" target="_blank" rel="noopener noreferrer"
+       class="text-warning link-underline-opacity-0 link-underline"
+       aria-label="Profil GitHub Muhammad Ikhsan">Muhammad Ikhsan</a>
+    dengan GitHub Pages (v0.0.4)
   </footer>
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="assets/script.js"></script>
 </body>

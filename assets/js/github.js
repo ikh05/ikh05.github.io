@@ -98,6 +98,8 @@ export async function updateSocialMedia() {
   list_sosial_media.forEach((sm) => {
     const textColor = getContrastColor(sm.color) === "black" ? "black" : "white";
 
+    console.log(sm, textColor);
+    
     document.getElementById("socialMedia").innerHTML += `
       <a href="${sm.link}"
          class="btn col-auto shadow"

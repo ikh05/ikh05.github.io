@@ -42,7 +42,9 @@ export function getContrastColor(input) {
 
   // Hitung luminance (persepsi manusia terhadap terang/gelap)
   const luminance = (0.299 * r + 0.587 * g + 0.114 * b);
-
+  
+  console.log(luminance, input);
+  
   return luminance > 186 ? "black" : "light"; 
 }
 // contoh penggunaan:

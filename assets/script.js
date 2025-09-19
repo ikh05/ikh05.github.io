@@ -1,3 +1,5 @@
+import AOS from "https://unpkg.com/aos@2.3.1/dist/aos.js";
+
 AOS.init();
 
 async function fetchGitHub(type, body = {}) {

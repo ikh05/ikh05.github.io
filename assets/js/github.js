@@ -1,26 +1,5 @@
-import AOS from "https://unpkg.com/aos@2.3.1/dist/aos.js";
-
-AOS.init();
-
-async function fetchGitHub(type, body = {}) {
-  try {
-    const res = await fetch("https://github-token-ikh05.netlify.app/.netlify/functions/github", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ type, ...body }) // type => "user", "repos", "file"
-    });
-
-    if (!res.ok) {
-      throw new Error(`Request failed: ${res.status}`);
-    }
-
-    const data = await res.json();
-    return data;
-  } catch (err) {
-    console.error("Fetch error:", err);
-    return { error: err.message };
-  }
-}
+import {fetchGitHub, toggleElementVisibility, checkAllTrue } from './functions.js';
+import {getContrastColor} from './luminance.js';
 
 function parseSocialBadges(markdown) {
   const regex = /\[!\[(.*?)\]\((.*?)\)\]\((.*?)\)/g;
@@ -42,10 +21,7 @@ function parseSocialBadges(markdown) {
   return result;
 }
 
-document.getElementById("avatar").onload = function () {
-  end_loading.avatar = true;
-  showProfil();
-};
+
 
 const end_loading = {
   social_media: false,
@@ -53,30 +29,22 @@ const end_loading = {
   avatar: false,
 };
 
-function showHiddenElement(el_show, el_hidden, show = true, func = null) {
-  if (show) {
-    document.getElementById(el_show).classList.remove("d-none");
-    document.getElementById(el_hidden).classList.add("d-none");
-    if (typeof func === "function") func();
-  }
-}
 
 async function showProfil() {
-  await AOS.init();
   if (checkAllTrue(end_loading)) {
-    showHiddenElement("trueProfil", "profilPlaceholder", true, () => {
+    toggleElementVisibility("trueProfil", "profilPlaceholder", true, () => {
       document.getElementById("profilPlaceholder").remove();
       document.getElementById("trueProfil").setAttribute("aria-hidden", "false");
     });
   }
 }
 
-// fungsi cek apakah semua data dalam objek sudah true
-function checkAllTrue(obj) {
-  return Object.values(obj).every((value) => value === true);
-}
 
-async function updateUser() {
+export async function updateUser() {
+  document.getElementById("avatar").onload = function () {
+    end_loading.avatar = true;
+    showProfil();
+  };
   const user = await fetchGitHub("user");
   if (user.error) {
     document.getElementById("bio").textContent = "Gagal ambil data.";
@@ -99,7 +67,7 @@ async function updateUser() {
   showProfil();
 }
 
-async function updateSocialMedia() {
+export async function updateSocialMedia() {
   const file = await fetchGitHub("file", {
     path: "README.md",
     repo: "ikh05",
@@ -121,22 +89,26 @@ async function updateSocialMedia() {
        class="btn btn-dark col-auto"
        target="_blank"
        rel="noopener noreferrer"
-       role="listitem"
+       role="link"
+       aria-pressed="false"
        aria-label="Kunjungi profil GitHub Muhammad Ikhsan">
        <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
     </a>`;
 
   // Tambahkan sosial media lain
   list_sosial_media.forEach((sm) => {
+    const textColor = getContrastColor(sm.color) === "black" ? "black" : "white";
+
     document.getElementById("socialMedia").innerHTML += `
       <a data-aos="zoom-in"
          href="${sm.link}"
          class="btn col-auto shadow"
          target="_blank"
          rel="noopener noreferrer"
-         role="listitem"
+         role="link"
+         aria-pressed="false"
          aria-label="Kunjungi profil ${sm.sosial_media} Muhammad Ikhsan"
-         style="background-color: ${sm.color}; color: white;">
+         style="background-color: ${sm.color}; color: ${textColor};">
          <i class="fa-brands fa-${sm.sosial_media.toLowerCase()}" aria-hidden="true"></i>
          ${sm.sosial_media}
       </a>
@@ -146,6 +118,3 @@ async function updateSocialMedia() {
   end_loading.social_media = true;
   showProfil();
 }
-
-updateUser();
-updateSocialMedia();

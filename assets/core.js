@@ -1,4 +1,4 @@
-import getContrastColor from './luminance.js';
+import getContrastColor from './assets/luminance.js';
 
 console.log(getContrastColor("#ffffff")); // Output: "black"
 console.log(getContrastColor("rgb(0, 0, 0)")); // Output: "light"

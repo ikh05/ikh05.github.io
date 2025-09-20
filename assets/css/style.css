@@ -4,3 +4,10 @@ body {
 .card {
   border-radius: 12px;
 }
+
+.btn[btn-color]{
+  transition: .5s all;
+}
+.btn[btn-color]:hover{
+  opacity: 95%;
+}

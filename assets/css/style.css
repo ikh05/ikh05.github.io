@@ -9,5 +9,5 @@ body {
   transition: .5s all;
 }
 .btn[btn-color]:hover{
-  opacity: 95%;
+  opacity: 80%;
 }

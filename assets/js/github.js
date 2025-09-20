@@ -101,7 +101,7 @@ export async function updateSocialMedia() {
     
     document.getElementById("socialMedia").innerHTML += `
       <a href="${sm.link}"
-         class="btn col-auto shadow"
+         class="btn col-auto shadow btn-dark"
          target="_blank"
          rel="noopener noreferrer"
          role="link"

@@ -1,180 +1,163 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+  <!-- 🌐 Basic SEO -->
+  <title>Portofolio Muhammad Ikhsan</title>
+  <meta name="description" content="Portofolio Muhammad Ikhsan, Web Developer otodidak yang fokus pada pembuatan website modern, cepat, dan responsif.">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portofolio GitHub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Meta SEO -->
-  <meta name="description" content="Portofolio profesional berbasis GitHub menggunakan Bootstrap 5 & Anime.js">
-  <meta property="og:title" content="Portofolio GitHub">
-  <meta property="og:description" content="Portofolio profesional dengan proyek GitHub.">
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Portofolio Muhammad Ikhsan">
+  <meta property="og:description" content="Lihat karya Muhammad Ikhsan dalam membangun website modern, cepat, dan responsif.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ikhsan.site">
+  <meta property="og:image" content="https://ikhsan.site/assets/img/preview.png">
+  <meta property="og:locale" content="id_ID">
 
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Anime.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Portofolio Muhammad Ikhsan">
+  <meta name="twitter:description" content="Web Developer otodidak yang membangun website modern dan responsif.">
+  <meta name="twitter:image" content="https://ikhsan.site/assets/img/preview.png">
 
+  <!-- Bootstrap & FontAwesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" defer>
+  <script src="https://kit.fontawesome.com/16f1c0f365.js" crossorigin="anonymous" async></script>
+
+  <!-- 🎨 Tema Custom -->
   <style>
-    body { font-family: "Segoe UI", Roboto, sans-serif; line-height: 1.6; background-color: #f8fafc; }
-    .navbar { box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
-    .hero { padding: 100px 20px; text-align: center; background: linear-gradient(135deg,#0d6efd,#6610f2); color: #fff; }
-    .hero img { width: 150px; height: 150px; border-radius: 50%; border: 4px solid #fff; margin-bottom: 20px; }
-    .section-title { font-weight: 700; margin-bottom: 40px; text-align: center; }
-    .card { transition: transform .3s ease, box-shadow .3s ease; }
-    .card:hover { transform: translateY(-6px); box-shadow: 0 10px 20px rgba(0,0,0,0.12); }
-    footer { background: #0d6efd; color: white; padding: 20px; text-align: center; margin-top: 60px; }
-    .skill-badge { margin: 5px; }
-    /* Skip link for accessibility */
-    .skip-link { position: absolute; top: -40px; left: 0; background: #000; color: #fff; padding: 8px; z-index: 100; }
-    .skip-link:focus { top: 0; }
-    /* Reduced motion respect */
-    @media (prefers-reduced-motion: reduce) {
-      * { animation: none !important; transition: none !important; }
+    :root {
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#6ee7b7;
+      --glass: rgba(255,255,255,0.04);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg:#f6f9fc;
+        --card:#ffffff;
+        --muted:#6b7280;
+        --accent:#06b6d4;
+        --glass: rgba(0,0,0,0.03);
+      }
+    }
+    body {
+      background: var(--bg);
+      color: #e6eef6;
+      font-family: Inter, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .navbar { background: var(--card) !important; }
+    .navbar-brand { color: var(--accent) !important; font-weight: 600; }
+    h2, h3 { color: var(--accent); }
+    .card {
+      background: linear-gradient(180deg,var(--card),rgba(255,255,255,0.02));
+      border: none;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(2,6,23,0.6);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.5); }
+    .btn-accent {
+      background: var(--accent);
+      color: #04201a;
+      border: none;
+    }
+    .btn-accent:hover { background: #34d399; color: #fff; }
+    footer {
+      background: var(--card);
+      color: var(--muted);
     }
   </style>
 </head>
 <body>
-<a href="#mainContent" class="skip-link">Lewati ke Konten</a>
+  <!-- Skip link -->
+  <a href="#mainContent" class="visually-hidden-focusable">Lewati ke konten utama</a>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-light fixed-top" role="navigation">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">Portofolio</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigasi">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Proyek</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
-      </ul>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg" role="navigation" aria-label="Navigasi utama">
+    <div class="container">
+      <a class="navbar-brand" href="#">Muhammad Ikhsan</a>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- Hero -->
-<header class="hero" role="banner">
-  <img id="avatar" src="" alt="Foto Profil GitHub" loading="lazy">
-  <h1 id="name">Loading...</h1>
-  <p id="bio">Mengambil data GitHub...</p>
-  <a id="githubLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-light btn-lg mt-3">Lihat Profil GitHub</a>
-</header>
+  <!-- Profil -->
+  <main id="mainContent">
+    <section class="container text-center py-5" id="profile" aria-labelledby="profileHeading">
+      <h1 id="profileHeading" class="visually-hidden">Profil</h1>
 
-<main id="mainContent">
-
-<!-- About -->
-<section id="about" class="container py-5">
-  <h2 class="section-title">👨‍💻 Tentang Saya</h2>
-  <div class="row justify-content-center">
-    <div class="col-md-8 text-center">
-      <p>Saya seorang developer dengan fokus pada <strong>Frontend Development</strong> dan pengalaman membangun aplikasi web modern.</p>
-      <div class="mt-3">
-        <span class="badge bg-primary skill-badge">HTML</span>
-        <span class="badge bg-success skill-badge">CSS</span>
-        <span class="badge bg-warning text-dark skill-badge">JavaScript</span>
-        <span class="badge bg-info text-dark skill-badge">Bootstrap</span>
-        <span class="badge bg-dark skill-badge">GitHub</span>
+      <img id="avatar" src="assets/img/profile.png" 
+           class="rounded-circle mb-3 img-thumbnail shadow" 
+           alt="Foto profil Muhammad Ikhsan" width="140" loading="lazy">
+      <h2 class="fw-bold">Muhammad Ikhsan</h2>
+      <p class="text-muted">Web Developer otodidak, fokus pada pembuatan website modern, cepat, dan responsif.</p>
+      <div class="d-flex gap-2 justify-content-center">
+        <a class="btn btn-accent" href="https://github.com/ikh05" target="_blank" rel="noopener" aria-label="Kunjungi GitHub Ikhsan">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a class="btn btn-outline-light" href="https://www.instagram.com/m_ikhsann05/" target="_blank" rel="noopener" aria-label="Instagram Ikhsan">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Projects -->
-<section id="projects" class="container py-5">
-  <h2 class="section-title">📂 Proyek GitHub</h2>
-  <div id="repoList" class="row g-4" aria-live="polite">
-    <!-- Repos akan dimuat lewat JS -->
-  </div>
-</section>
-
-<!-- Contact -->
-<section id="contact" class="container py-5 text-center">
-  <h2 class="section-title">📩 Kontak</h2>
-  <p>Ingin berkolaborasi? Hubungi saya melalui:</p>
-  <a href="mailto:email@example.com" class="btn btn-outline-primary m-2" aria-label="Kirim email">Email</a>
-  <a id="githubLink2" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark m-2" aria-label="Kunjungi GitHub saya">GitHub</a>
-</section>
-
-</main>
-
-<!-- Footer -->
-<footer role="contentinfo">
-  <p>© 2025 Dibuat dengan ❤️ menggunakan Bootstrap 5 & Anime.js</p>
-</footer>
-
-<!-- Script -->
-<script>
-  const username = "octocat"; // ganti dengan username GitHub kamu
-  const apiUser = `https://api.github.com/users/${username}`;
-  const apiRepos = `https://api.github.com/users/${username}/repos?sort=updated&per_page=6`;
-
-  async function loadProfile() {
-    try {
-      const res = await fetch(apiUser);
-      const data = await res.json();
-      document.getElementById("avatar").src = data.avatar_url;
-      document.getElementById("name").textContent = data.name || data.login;
-      document.getElementById("bio").textContent = data.bio || "Tidak ada bio.";
-      document.getElementById("githubLink").href = data.html_url;
-      document.getElementById("githubLink2").href = data.html_url;
-
-      // Animasi hero
-      anime({
-        targets: ".hero h1, .hero p, .hero a",
-        translateY: [40, 0],
-        opacity: [0, 1],
-        delay: anime.stagger(200),
-        easing: "easeOutExpo"
-      });
-    } catch (error) {
-      document.getElementById("bio").textContent = "Gagal memuat data GitHub.";
-    }
-  }
-
-  async function loadRepos() {
-    try {
-      const res = await fetch(apiRepos);
-      const repos = await res.json();
-      const container = document.getElementById("repoList");
-      container.innerHTML = "";
-
-      repos.forEach((repo) => {
-        const col = document.createElement("div");
-        col.className = "col-md-4";
-        col.innerHTML = `
-          <div class="card h-100 shadow-sm">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title">${repo.name}</h5>
-              <p class="card-text flex-grow-1">${repo.description || "Tidak ada deskripsi."}</p>
-              <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer"
-                 class="btn btn-primary btn-sm mt-auto" aria-label="Buka repositori ${repo.name} di GitHub">Lihat Repo</a>
+    <!-- Website / Proyek -->
+    <section class="container my-5" aria-labelledby="projectHeading">
+      <h2 id="projectHeading" class="mb-4 text-center">Website yang Pernah Dibuat</h2>
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+          <div class="card h-100 p-3" role="article">
+            <div class="card-body">
+              <h3 class="card-title mb-1">Kalkulator Perbandingan Harga</h3>
+              <a href="https://calcprice-ikhtoolkit.rf.gd" 
+                 target="_blank" rel="noopener" 
+                 class="small text-secondary link-underline-opacity-0">
+                 calcprice-ikhtoolkit.rf.gd
+              </a>
+              <hr class="my-2">
+              <p class="card-text">Aplikasi sederhana untuk membandingkan harga berdasarkan isi/berat produk.</p>
+              <a href="https://calcprice-ikhtoolkit.rf.gd" 
+                 target="_blank" rel="noopener" 
+                 class="btn btn-accent mt-auto">Kunjungi</a>
             </div>
           </div>
-        `;
-        container.appendChild(col);
-      });
+        </div>
+        <!-- Tambahkan card lain di sini -->
+      </div>
+    </section>
+  </main>
 
-      anime({
-        targets: "#repoList .card",
-        translateY: [50, 0],
-        opacity: [0, 1],
-        delay: anime.stagger(150),
-        easing: "easeOutQuad"
-      });
-    } catch (error) {
-      document.getElementById("repoList").innerHTML = "<p>Gagal memuat repositori.</p>";
+  <!-- Footer -->
+  <footer class="text-center py-3" role="contentinfo">
+    © 2025 Dibuat oleh 
+    <a href="https://github.com/ikh05" target="_blank" rel="noopener" class="link-light fw-semibold">Muhammad Ikhsan</a>
+    dengan GitHub Pages
+  </footer>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Muhammad Ikhsan",
+      "url": "https://ikhsan.site",
+      "image": "https://ikhsan.site/assets/img/profile.png",
+      "jobTitle": "Web Developer",
+      "description": "Web Developer otodidak, fokus pada pembuatan website modern, cepat, dan responsif.",
+      "sameAs": [
+        "https://github.com/ikh05",
+        "https://www.instagram.com/m_ikhsann05/",
+        "https://web.facebook.com/ikhsan0511"
+      ]
     }
-  }
-
-  loadProfile();
-  loadRepos();
-</script>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </script>
 </body>
 </html>

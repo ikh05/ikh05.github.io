@@ -89,7 +89,6 @@ export async function updateSocialMedia() {
        target="_blank"
        rel="noopener noreferrer"
        role="link"
-       aria-pressed="false"
        aria-label="Kunjungi profil GitHub Muhammad Ikhsan">
        <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
     </a>`;
@@ -106,7 +105,6 @@ export async function updateSocialMedia() {
          target="_blank"
          rel="noopener noreferrer"
          role="link"
-         aria-pressed="false"
          aria-label="Kunjungi profil ${sm.sosial_media} Muhammad Ikhsan"
          style="background-color: ${sm.color}; color: ${textColor};">
          <i class="fa-brands fa-${sm.sosial_media.toLowerCase()}" aria-hidden="true"></i>

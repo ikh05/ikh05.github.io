@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>404 — Tidak Ditemukan</title>
+  <meta name="description" content="Halaman tidak ditemukan." />
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#6ee7b7;
+      --glass: rgba(255,255,255,0.04);
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #f6f9fc;
+        --card: #ffffff;
+        --muted: #6b7280;
+        --accent: #06b6d4;
+        --glass: rgba(0,0,0,0.03);
+      }
+    }
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(circle at 10% 10%, rgba(110,231,183,0.06), transparent 10%),
+                  linear-gradient(180deg, rgba(0,0,0,0.02), transparent 30%),
+                  var(--bg);
+      color: #e6eef6;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .card{
+      width:100%;
+      max-width:920px;
+      background: linear-gradient(180deg,var(--card), rgba(255,255,255,0.02));
+      border-radius:14px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+      padding:32px;
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:24px;
+      align-items:center;
+    }
+
+    @media (max-width:880px){
+      .card{grid-template-columns:1fr; padding:24px;}
+    }
+
+    .left h1{
+      margin:0 0 6px 0;
+      font-size: clamp(28px, 3.8vw, 44px);
+      letter-spacing:-0.01em;
+      color: var(--accent);
+    }
+    .code{
+      display:inline-block;
+      background:var(--glass);
+      color:var(--muted);
+      padding:6px 10px;
+      border-radius:8px;
+      font-weight:600;
+      margin-bottom:12px;
+    }
+    p{margin:0 0 18px 0; color:var(--muted); line-height:1.6;}
+    .actions{display:flex; gap:10px; flex-wrap:wrap;}
+    .btn{
+      text-decoration:none;
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:600;
+      background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      color:inherit;
+      border:1px solid rgba(255,255,255,0.04);
+      transition: transform .16s ease, box-shadow .16s ease;
+    }
+    .btn:hover{ transform: translateY(-4px); box-shadow: 0 8px 20px rgba(2,6,23,0.45); }
+    .btn.primary{ background: linear-gradient(90deg, var(--accent), #34d399); color:#04201a; border: none; }
+    .small{ font-size:13px; color:var(--muted); }
+
+    .right{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      min-height:140px;
+    }
+    .illustr{
+      width:100%;
+      max-width:320px;
+      aspect-ratio:1.25/1;
+      border-radius:12px;
+      background:
+        conic-gradient(from 200deg at 10% 10%, rgba(110,231,183,0.08), transparent 20%),
+        linear-gradient(135deg, rgba(255,255,255,0.03), transparent 40%),
+        rgba(255,255,255,0.01);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      padding:24px;
+      box-shadow: inset 0 -10px 30px rgba(0,0,0,0.25);
+      color:var(--muted);
+    }
+    .big-num{
+      font-size:56px;
+      line-height:1;
+      font-weight:800;
+      letter-spacing:-0.02em;
+      color:var(--accent);
+      margin-bottom:6px;
+    }
+    .orbit{
+      width:80px;height:80px;border-radius:50%;
+      position:absolute;right:48px;top:-34px;
+      filter: blur(14px);
+      opacity:0.12;
+      background: radial-gradient(circle at 30% 30%, #6ee7b7, transparent 40%);
+    }
+    .search{
+      display:flex;
+      gap:8px;
+      margin-top:12px;
+    }
+    .search input{
+      flex:1;
+      padding:10px 12px;
+      border-radius:8px;
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.04);
+      color:inherit;
+      outline:none;
+    }
+    .search button{
+      padding:10px 12px;
+      border-radius:8px;
+      border:none;
+      font-weight:700;
+      background:var(--accent);
+      color:#04201a;
+      cursor:pointer;
+    }
+
+    footer{ margin-top:18px; font-size:13px; color:var(--muted); }
+  </style>
+</head>
+<body>
+  <main class="card" role="main" aria-labelledby="title">
+    <section class="left">
+      <div class="code">404 • Page not found</div>
+      <h1 id="title">Waduh — Halaman tidak ketemu</h1>
+      <p>Mungkin URL salah ketik, atau halaman tersebut telah dipindahkan / dihapus. Tenang — masih banyak yang bisa kamu lakukan dari sini.</p>
+
+      <div class="actions">
+        <a class="btn primary" href="/">Kembali ke Beranda</a>
+        <a class="btn" href="/sitemap.xml">Lihat sitemap</a>
+        <a class="btn" href="https://github.com/USERNAME/REPO">Laporan masalah</a>
+      </div>
+
+      <form class="small" onsubmit="event.preventDefault(); goSearch();">
+        <div style="margin-top:14px;">Atau cari halaman:</div>
+        <div class="search" role="search">
+          <input id="q" type="search" placeholder="Ketik kata kunci dan tekan Enter" aria-label="cari di situs" />
+          <button type="submit">Cari</button>
+        </div>
+      </form>
+
+      <footer>Jika ini seharusnya ada, periksa folder repo atau buka issue — kami bantu cek.</footer>
+    </section>
+
+    <aside class="right" aria-hidden="true">
+      <div class="orbit" style="right:24px; top:-28px;"></div>
+      <div class="illustr">
+        <div class="big-num">404</div>
+        <div style="font-weight:700; margin-bottom:8px;">Halaman tidak tersedia</div>
+        <div class="small">Coba periksa URL atau kembali ke beranda.</div>
+      </div>
+    </aside>
+  </main>
+
+  <script>
+    // Cari sederhana: jika ingin gunakan search engine site:domain
+    function goSearch(){
+      const q = document.getElementById('q').value.trim();
+      if(!q) return;
+      // Ganti 'example.com' dengan domain Anda (atau hapus jika tidak perlu)
+      const domain = location.hostname || 'example.com';
+      const url = 'https://www.google.com/search?q=site:' + encodeURIComponent(domain) + '+' + encodeURIComponent(q);
+      window.location.href = url;
+    }
+
+    // Jika memakai GitHub Pages dengan base path (project pages), tombol "Home" akan otomatis ke root.
+  </script>
+</body>
+</html>

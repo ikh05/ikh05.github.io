@@ -105,6 +105,7 @@ export async function updateSocialMedia() {
          target="_blank"
          rel="noopener noreferrer"
          role="link"
+         btn-color="${sm.color}"
          aria-label="Kunjungi profil ${sm.sosial_media} Muhammad Ikhsan"
          style="background-color: ${sm.color}; color: ${textColor};">
          <i class="fa-brands fa-${sm.sosial_media.toLowerCase()}" aria-hidden="true"></i>
